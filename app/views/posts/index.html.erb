@@ -1,0 +1,11 @@
+<h2>Liste des corsairs</h2>
+
+<% @corsairs.each do |corsair| %>
+
+  <p><%= corsair.first_name %></p>
+    <p><%= corsair.age %></p>
+
+    <%= link_to "Voir le profil", corsaire_path, method: "get" %>
+
+
+<% end %>

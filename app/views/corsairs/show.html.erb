@@ -1,0 +1,36 @@
+<h2>Profil du corsair</h2>
+<h4>Nom</h4>
+<p><%= @corsair.first_name %></p>
+<h4>Age</h4>
+<p><%= @corsair.age %></p>
+<h4>Compte Slack</h4>
+<% if @corsair.slack_handle != nil %>
+    <p><%=@corsair.slack_handle%></p>
+<% else %>
+    <p><%=@corsair.first_name%> n'a pas encore renseigné son pseudo Slack !</p>
+<% end %>
+<h4>Compte Github</h4>
+<% if @corsair.slack_handle != nil %>
+    <p><%=@corsair.github_handle%></p>
+<% else %>
+    <p><%=@corsair.first_name%> n'a pas encore renseigné son pseudo Github !</p>
+<% end %>
+<h4>Biographie</h4>
+<% if @corsair.slack_handle != nil %>
+    <p><%=@corsair.bio%></p>
+<% else %>
+    <p><%=@corsair.first_name%> n'a pas encore renseigné sa biographie !</p>
+<% end %>
+<h4>Nourriture</h4>
+<% if @corsair.likeness != nil %>
+    <p><%=@corsair.likeness %></p>
+<% else %>
+    <p><%=@corsair.likeness%> n'a pas encore renseigné kebab ou hummus !</p>
+<% end %>
+
+
+
+<%= link_to "Modifier le profil", edit_corsair_path, method: "get", class: "btn btn-lg btn-warning" %>
+
+<%= link_to "Retour à la liste", corsairs_path, method: "get", class: "btn btn-lg btn-primary" %>
+

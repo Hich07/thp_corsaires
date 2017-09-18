@@ -1,0 +1,59 @@
+<h2>Editer le profil</h2>
+
+<%= form_for @corsair do |f| %>
+
+    <div class="group-form">
+      <label>Nom du corsaire</label>
+      <%=  f.text_field :first_name,
+                        :maxlength => 20,
+                        :required => true,
+                        class: "form-control" %>
+    </div>
+
+    <div class="group-form">
+      <label>Age</label>
+      <%=  f.text_field :age,
+                        :required => true,
+                        class: "form-control"
+      %>
+    </div>
+
+    <div class="group-form">
+      <label>Slack</label>
+      <%=  f.text_field :slack_handle,
+                        class: "form-control"
+      %>
+    </div>
+
+    <div class="group-form">
+      <label>Github</label>
+      <%=  f.text_field :github_handle,
+                        class: "form-control"
+      %>
+    </div>
+
+    <div class="group-form">
+      <label>Bio</label>
+      <%=  f.text_field :bio,
+                        class: "form-control"
+      %>
+    </div>
+
+    <div class="group-form">
+      <p><label>Nourriture</label></p>
+      <%= f.radio_button :likeness, 'kebab' %>
+      <%= f.label :likeness, 'Kebab', :value => 'Kebab' %>
+      <%= f.radio_button :likeness, 'hummus' %>
+      <%= f.label :likeness, 'Hummus', :value => 'Hummus' %>
+    </div>
+
+
+
+    <div class="group-form">
+      <button type="submit">Enregistrer la modification</button>
+    </div>
+
+    <div class="group-form">
+      <a href="<%= corsair_path %>" class="btn btn-danger" data-method="DELETE">Supprimer</a>
+    </div>
+<% end %>

@@ -1,0 +1,14 @@
+<h2>Liste des corsairs</h2>
+
+<% @corsairs.each do |corsair| %>
+
+    <p><%= corsair.first_name %></p>
+    <p><%= corsair.age %></p>
+
+
+
+    <p><%= link_to "Voir le profil", corsair_path(corsair), method: "get", class: "btn btn-lg btn-primary" %></p>
+
+<% end %>
+
+<p><%= link_to "Créer un nouveau profil", new_corsair_path, method: "get", class: "btn btn-lg btn-success" %></p>
